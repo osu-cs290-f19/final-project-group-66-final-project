@@ -3,45 +3,61 @@ body{
   margin: 0;
 }
 
+
 header {
   width: 100%;
   float:left;
-/*  height: 10%;*/
-/*  background-color: #000;*/
-/*  margin-top: -150px;*/
   text-align: center;
-/* display: flex;
-  align-items: center;
-  position: relative;
-*/
-
 }
+
 
 header img{
   max-width: 50%;
 
 }
 
+
 .filter-container{
   text-align:center;
 }
+
 
 .filter-container img{
   max-width: 3%;
 }
 
+
 .filter-input-container{
   display: inline-block;
+  margin: 10px;
 }
 
+
+.filter-input-label {
+    display: inline-block;
+}
+
+
+.filter-input-element {
+    display: inline-block;
+}
+
+/*
 section{
   text-align:center;
 }
+*/
+
+
+#people-card{
+  text-align: center;
+}
+
 
 .card {
   display: inline-block;
-  height: 400px;
-  width: 500px;
+  height: 300px;
+  width: 370px;
   margin: 10px;
   padding: 10px;
   border: 1px solid #dadada;
@@ -50,22 +66,44 @@ section{
 }
 
 .card-image-container {
+  vertical-align: top;
   display: inline-block;
 }
 
 .card-image-container img {
+  margin-left: 10px;
+  margin-top: 10px;
   max-height: 300px;
   max-width: 200px;
 }
 
 .card-info-container span{
+  word-wrap: break-word;
+  text-align: left;
   display: flex;
 }
 
+
 .card-info-container{
   display: inline-block;
+  margin-left: 30px;
+  margin-top: 20px;
+  position: absolute;
 }
 
 .card-info-container a{
   display: flex;
+}
+
+#add_people_button {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 60px;
+    width: 60px;
+    border: none;
+    font-size: 36px;
+    color: red;
+    background-color: white;
+    cursor: pointer;
 }
