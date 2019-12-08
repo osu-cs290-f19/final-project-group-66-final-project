@@ -1,3 +1,71 @@
 body{
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  float:left;
+/*  height: 10%;*/
+/*  background-color: #000;*/
+/*  margin-top: -150px;*/
+  text-align: center;
+/* display: flex;
+  align-items: center;
+  position: relative;
+*/
+
+}
+
+header img{
+  max-width: 50%;
+
+}
+
+.filter-container{
+  text-align:center;
+}
+
+.filter-container img{
+  max-width: 3%;
+}
+
+.filter-input-container{
+  display: inline-block;
+}
+
+section{
+  text-align:center;
+}
+
+.card {
+  display: inline-block;
+  height: 400px;
+  width: 500px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+
+}
+
+.card-image-container {
+  display: inline-block;
+}
+
+.card-image-container img {
+  max-height: 300px;
+  max-width: 200px;
+}
+
+.card-info-container span{
+  display: flex;
+}
+
+.card-info-container{
+  display: inline-block;
+}
+
+.card-info-container a{
+  display: flex;
 }
