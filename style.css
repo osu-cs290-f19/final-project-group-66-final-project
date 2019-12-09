@@ -47,7 +47,30 @@ section{
   text-align:center;
 }
 */
+.card-name{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+.card-sexuality{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-email{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-phone-number{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-blog{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 #people-card{
   text-align: center;
@@ -57,7 +80,7 @@ section{
 .card {
   display: inline-block;
   height: 300px;
-  width: 370px;
+  width: 410px;
   margin: 10px;
   padding: 10px;
   border: 1px solid #dadada;
@@ -109,7 +132,7 @@ section{
 }
 
 #add-something-modal{
-
+  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
