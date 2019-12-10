@@ -132,7 +132,7 @@ section{
 }
 
 #add-something-modal{
-  display: none;
+/*  display: none; */
   position: fixed;
   top: 0;
   bottom: 0;
@@ -144,19 +144,27 @@ section{
 
 
 .modal-dialog{
-/*  background-image: url("blue.jpg");*/
+  background-image: url("blue.jpg");
   background-color: #fefbd8;
+
   padding: 40px;
-  width: 300px;
-  height: 300px;
-  /*
-  max-width: 350px;
-  min-width: 250px;
-  min-height: 300px;
-  */
+  width: 400px;
+  height: 400px;
   margin: 40px auto;
-  background-color: #fff;
   border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+
+  /*  background-color: #00FFFF;*/
+  /*
+  width: auto;
+  height: auto;
+  max-width: 400px;
+  min-width: 250px;
+  max-height: 400px;
+  min-height: 250px;
+  */
+
 }
 
 .modal-body{
@@ -167,4 +175,105 @@ section{
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 20px 10px;
+}
+
+h3{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+#modal-close{
+  position: absolute;
+
+  right: 500px;
+  top: 60px;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+
+}
+
+#modal-close:hover {
+  color: red;
+  transform: scale(1.5);
+}
+
+.post-input-element{
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.post-input-option{
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.post-input-option input{
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+
+.post-input-element > label{
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 1px;
+}
+
+.post-input-element input{
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 17px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+#post-gender{
+  margin-left: 25px;
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 17px;
+  border: 1px solid #aaa;
+}
+
+#modal-cancel{
+  color: #333;
+  background-color: #fff;
+
+}
+
+#modal-cancel, #modal-accept{
+  margin-right: 20px;
+}
+
+.action-button{
+  font-size: 15px;
+  color: white;
+  padding: 5px;
+  background-color: #000;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+#modal-accept:hover{
+  color: black;
+}
+
+#modal-accept:hover, #modal-cancel:hover{
+  background-color: orange;
 }
