@@ -46,242 +46,142 @@ updateButton.addEventListener('click',  function (event){
 
     event.stopPropagation();
 })
-//------------------------------------------
-var allContent = [];
-var allSex = [];
 
-/*  This for handlebars files
-function insertNew(name,Sexuality,emailURL,phone,blogURL){
-	var personCard = Handlebars.templages.item({
-		name:name,
-		Sexuality:Sexuality,
-		emailURL:emailURL,
-		phone:phone,
-		blogURL:blogURL		
-	})
-	var personContainer = document.getElementById('content');
-	personContainer.insertAdjacentHTML('beforeend'personCard);
-}
-*/
+//-----------------Add new item!
+//
+//
+//Open the page when the user click the plus samble
+var sellbutton = document.getElementById('add_people_button');
+var backdrop = document.getElementById('modal-backdrop');
+var sellmodal = document.getElementById('add-something-modal');
 
-//~~~~~
-//Cehck wheter all of required inputs were supplied
-function handleModalAcceptClick() {
+sellbutton.addEventListener('click',  function sell(Event){
+	sellmodal.style.display = 'block';
+	backdrop.style.display = 'block';
+});
 
-	var name = document.getElementById('post-name-input').value.trim();
-	var photo = document.getElementById('post-photo-input').value.trim();
-	var emailURL = document.getElementById('post-blog-input').value.trim();
-	var phone = document.getElementById('post-phone-input').value.trim();
-	var Sexuality = document.querySelector('selected value').value;		//??
+//For close the second page or cancel items
+var modalclose = document.getElementById('modal-close');
+var modalcancel = document.getElementById('modal-cancel');
 
-	if (!name || !emailURL || !photo || !phone || !Sexuality) {
-		alert("You must fill in all of the fields!");
-	} else {
+modalclose.addEventListener('click',  function sell(Event){
+	clear();
+})
+modalcancel.addEventListener('click',  function sell(Event){
+//	clear();
+	sellmodal.style.display = 'none';
+	backdrop.style.display = 'none';
+})
 
-		allPosts.push({
-			name:name,
-			Sexuality:Sexuality,
-			emailURL:emailURL,
-			phone:phone,
-			blogURL:blogURL		
-		});
 
-		clearFiltersAndReinsertPosts();	
+//Get the information of user wanna input]
+//
+var potext = document.getElementById('post-text-input');
+var posex = document.getElementById('post-gender');
+var pophoto = document.getElementById('post-photo-input');
+var poblog = document.getElementById('post-blog-input');
+//var pophone = document.getElementById('post-phone-input');
 
-		hideSellSomethingModal();
+var potextwords = 0;
+var posexwords = 0;
+var pophotowords = 0;
+var poblogwords = 0;
+var pophonewords = 0;
+
+potext.addEventListener('change',function listener(event){
+	potextwords = event.currentTarget.value;
+	event.stopPropagation();
+});
+
+posex.addEventListener('change',function listener(event){
+	posexwords = event.currentTarget.value;
+	event.stopPropagation();
+});
+
+pophoto.addEventListener('change',function listener(event){
+	pophotowords = event.currentTarget.value;
+	event.stopPropagation();
+});
+
+
+poblog.addEventListener('change',function listener(event){
+	poblogwords = event.currentTarget.value;
+	event.stopPropagation();
+});
+
+/*pophone.addEventListener('change',function listener(event){
+	pophonewords = event.currentTarget.value;
+	event.stopPropagation();
+});*/
+
+
+//Create a new item process
+var main = document.getElementById('people-cards');
+var accept = document.getElementById('modal-accept');
+
+accept.addEventListener('click',function sell(event){
+	if(potextwords == 0 || posexwords ==0 || pophotowords == 0 || poblogwords == 0){
+		alert("Ha? Can you input all of it?");
+	}else{
+    var newpo = document.createElement('div');      //card
+
+    var imagcontainer = document.createElement('div');
+    var infocontainer = document.createElement('div');
+
+    var img = document.createElement('div');   //photo
+
+		var span1 = document.createElement('span');
+		var span2 = document.createElement('span');
+		var span3 = document.createElement('span');
+		var span4 = document.createElement('span');
+
+  	var blog = document.createElement('a');
+
+		newpo.classList.add('card');
+
+		imagcontainer.classList.add('card-image-container');
+		infocontainer.classList.add('card-info-container');
+		blog.classList.add('card-blog');
+		span1.classList.add('card-name');
+		span2.classList.add('card-sexuality');
+    span3.classList.add('card-email');
+		span4.classList.add('card-phone-number');
+
+		img.src = pophotowords;
+		img.alt = potextwords;
+
+		blog.textContent = poblogwords;
+		span1.textContent = potextwords;
+		span2.textContent = posexwords;
+    span3.textContent = poblogwords;
+		span4.textContent = pophonewords;
+
+		imagcontainer.appendChild(img);
+
+		infocontainer.appendChild(span1);
+		infocontainer.appendChild(span2);
+  	infocontainer.appendChild(span3);
+		infocontainer.appendChild(span4);
+  	infocontainer.appendChild(blog);
+
+		newpo.appendChild(imagcontainer);
+		newpo.appendChild(infocontainer);
+
+		main.appendChild(newpo);
+		clear();
+		sellmodal.style.display = 'none';
 	}
+});
+
+
+//Clear function for clear the input page
+function clear(){
+	potext.value = '';
+	posex.value = '';
+	pophoto.value = '';
+	poblog.value = '';
+//	pophone.value = '';
+
+	sellmodal.style.display = 'none';
+	backdrop.style.display = 'none' ;
 }
-
-//~~~~~
-//Clears all filter values
-function clearFiltersAndReinsertPosts() {
-
-	document.getElementById('filter-text').value = "";
-
-	doFilterUpdate();	
-
-}
-
-//~~~~~
-//Show the add person modal
-function showSellSomethingModal() {
-
-	var showSomethingModal = document.getElementById('add-something-button');
-	var modalBackdrop = document.getElementById('modal-backdrop');
-
-	showSomethingModal.style.display = 'block';
-	//showSomethingModal.classList.remove('hidden');
-	//modalBackdrop.classList.remove('hidden');
-	modalBackdrop.style.display = 'block';
-
-}
-
-//~~~~~
-//Clear any user-entered inputs
-function clearSellSomethingModalInputs() {
-
-	var postTextInputElements = [
-		document.getElementById('post-text-input'),
-			];
-
-	postTextInputElements.forEach(function (inputElem) {
-			inputElem.value = '';
-			});
-}
-
-//~~~~~
-//Hide the add person modal
-function hideSellSomethingModal() {
-
-	var showSomethingModal = document.getElementById('add-something-button');
-	var modalBackdrop = document.getElementById('modal-backdrop');
-
-	showSomethingModal.classList.add('hidden');
-	modalBackdrop.classList.add('hidden');
-
-	clearSellSomethingModalInputs();
-
-}
-/*?? Or will not use this
-function postPassesFilters(post, filters) {
-
-	if (filters.name) {
-		var postDescription = post.name.toLowerCase();
-		var filterText = filters.name.toLowerCase();
-		if (postDescription.indexOf(filterText) === -1) {
-			return false;
-		}
-	}
-	return true;
-
-}*/
-
-
-function doFilterUpdate() {
-
-	/*
-	 * Grab values of filters from user inputs.
-	 */
-	var filters = {
-		name: document.getElementById('filter-text').value.trim(),
-      		conditions: []
-	}
-
-	var filterConditionCheckedInputs = document.querySelectorAll("#filter-sexuality input:checked");
-	for (var i = 0; i < filterConditionCheckedInputs.length; i++) {
-		filters.Sexuality.push(filterConditionCheckedInputs[i].value);
-	}
-
-	var postContainer = document.getElementById('people-cards');
-	while(postContainer.lastChild) {
-		postContainer.removeChild(postContainer.lastChild);
-	}
-
-	allPosts.forEach(function (post) {
-			if (postPassesFilters(post, filters)) {
-				insertNew(name,Sexuality,emailURL,phone,blogURL);
-			}
-			});
-
-}
-
-function parsePostElem(postElem) {
-
-	var post = {
-		name: postElem.getAttribute('card-name'),				// ifattribute or getbyclass
-       		Sexuality: postElem.getAttribute('card-sexuality'),
-      		phone: postElem.getAttribute('card-phone-number'),
-      		emailURL: postElem.getAttribute('card-email'),
-	};
-
-	var postImageElem = postElem.querySelector('.card-image-container img');
-		post.photoURL = postImageElem.src;
-		post.description = postImageElem.alt;
-
-	return post;
-
-}
-
-//~~~~~
-//Wait until the DOM content is loaded
-var postElems = document.getElementsByClassName('card');
-for (var i = 0; i < postElems.length; i++) {
-	allPosts.push(parsePostElem(postElems[i]));
-}
-
-/*
- * Grab all of the sexuality names already in the filter dropdown.
-
- var filterCitySelect = document.getElementById('filter-sexuality');
- if (filterCitySelect) {
- var filterCityOptions = filterCitySelect.querySelectorAll('option:not([selected])');
- for (var i = 0; i < filterCityOptions.length; i++) {
- allCities.push(filterCityOptions[i].value.trim().toLowerCase());
- }
- }*/
-
-
-var sellSomethingButton = document.getElementById('add_people_button');
-
-if (sellSomethingButton) {
-	sellSomethingButton.addEventListener('click', showSellSomethingModal);
-}
-
-var modalAcceptButton = document.getElementById('modal-accept');
-if (modalAcceptButton) {
-	modalAcceptButton.addEventListener('click', handleModalAcceptClick);
-}
-
-var modalHideButtons = document.getElementsByClassName('modal-hide-button');
-for (var i = 0; i < modalHideButtons.length; i++) {
-	modalHideButtons[i].addEventListener('click', hideSellSomethingModal);
-}
-
-var filterUpdateButton = document.getElementById('filter-update-button');
-if (filterUpdateButton) {
-	filterUpdateButton.addEventListener('click', doFilterUpdate)
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -118,6 +118,8 @@ section{
   display: flex;
 }
 
+
+
 #add_people_button {
     position: fixed;
     right: 30px;
@@ -276,4 +278,8 @@ h3{
 
 #modal-accept:hover, #modal-cancel:hover{
   background-color: orange;
+}
+
+.hidden {
+  display: none;
 }
