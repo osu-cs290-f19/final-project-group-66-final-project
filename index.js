@@ -76,7 +76,7 @@ modalcancel.addEventListener('click',  function sell(Event){
 
 //Get the information of user wanna input]
 //
-var potext = document.getElementById('post-text-input');
+var potext = document.getElementById('post-name-input');
 var posex = document.getElementById('post-gender');
 var pophoto = document.getElementById('post-photo-input');
 var poblog = document.getElementById('post-blog-input');

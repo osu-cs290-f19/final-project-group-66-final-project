@@ -8,8 +8,12 @@ header {
   width: 100%;
   float:left;
   text-align: center;
+  background-color:white;
 }
 
+section{
+  background-color: rgb(6, 215, 243);
+}
 
 header img{
   max-width: 50%;
@@ -19,11 +23,15 @@ header img{
 
 .filter-container{
   text-align:center;
+  background-color: rgb(6, 215, 243);
+  display: block;
 }
 
 
 .filter-container img{
   max-width: 3%;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 
@@ -83,9 +91,9 @@ section{
   width: 410px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #dadada;
+  border: 1px solid black;
   border-radius: 3px;
-
+  background-color: rgb(9, 245, 245);
 }
 
 .card-image-container {
@@ -127,7 +135,7 @@ section{
     border: none;
     font-size: 36px;
     color: red;
-    background-color: white;
+    background-color: inherit;
     cursor: pointer;
 }
 
@@ -190,8 +198,7 @@ h3{
 
 #modal-close{
   position: absolute;
-
-  right: 500px;
+  right: 70%;
   top: 60px;
   font-size: 24px;
   border: none;
@@ -303,4 +310,14 @@ body > footer{
 #block-information{
   margin-left: 20px;
   margin-top: 30px;
+}
+
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
 }
