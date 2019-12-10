@@ -27,27 +27,30 @@
     <main class="content">
       <div class="filter-container">
 
-        <img src="filter.jpg" alt="filter logo">
+        <img src="filter.jpg" alt="filter logo" id="filter-img">
 
-        <div class="filter-input-container">
-          <label for="filter-text" class="filter-input-label">Name</label>
-          <div class="filter-input-element">
-            <input type="text" name="filter-text" id="filter-text" class="filter-input">
-          </div>
+        <div class="filter-body-container" id="filter-body-container">
+          <div class="filter-input-container">
+              <label for="filter-text" class="filter-input-label">Name</label>
+              <div class="filter-input-element">
+                <input type="text" name="filter-text" id="filter-text" class="filter-input">
+              </div>
+            </div>
+    
+            <div class="filter-input-container">
+              <label for="filter-sexuality">Sexuality</label>
+              <div class="filter-input-element">
+                <select id="filter-sexuality" class="filter-input" name="filter-sexuality">
+                  <option selected value="">Any</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                </select>
+              </div>
+            </div>
+    
+            <button id="filter-update-button" class="action-button">Update</button>
         </div>
 
-        <div class="filter-input-container">
-          <label for="filter-sexuality">Sexuality</label>
-          <div class="filter-input-element">
-            <select id="filter-sexuality" class="filter-input" name="filter-sexuality">
-              <option selected value="">Any</option>
-              <option>Female</option>
-              <option>Male</option>
-            </select>
-          </div>
-        </div>
-
-        <button id="filter-update-button" class="action-button">Update</button>
 
       </div>
 
@@ -142,8 +145,8 @@
       <div class="modal-dialog">
 
         <div class="modal-header">
-          <h3>Add a new person on CS Storage</h3>
           <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+          <h3>Add a new person on CS Storage</h3>
         </div>
 
         <div class="modal-body">

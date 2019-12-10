@@ -27,6 +27,9 @@ header img{
   display: block;
 }
 
+.filter-body-container{
+  display:none;
+}
 
 .filter-container img{
   max-width: 3%;
@@ -34,6 +37,10 @@ header img{
   border-radius: 3px;
 }
 
+.filter-container img:hover {
+  cursor: pointer;
+  max-width: 6%;
+}
 
 .filter-input-container{
   display: inline-block;
@@ -198,12 +205,11 @@ h3{
 
 #modal-close{
   position: absolute;
-  right: 70%;
-  top: 60px;
-  font-size: 24px;
+  top: 50px;
+  font-size: 40px;
   border: none;
   cursor: pointer;
-
+  background-color: inherit;
 }
 
 #modal-close:hover {
@@ -259,7 +265,6 @@ h3{
 #modal-cancel{
   color: #333;
   background-color: #fff;
-
 }
 
 #modal-cancel, #modal-accept{

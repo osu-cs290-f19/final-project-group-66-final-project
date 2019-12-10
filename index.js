@@ -1,3 +1,14 @@
+var filterImage = document.getElementById('filter-img');
+var filter = document.getElementById('filter-body-container');
+filterImage.addEventListener('click', function (event) {
+	if(filter.style.display != 'block'){
+		filter.style.display = 'block';
+	}
+	else{
+		filter.style.display = 'none';
+	}
+});
+
 
 var text = document.getElementById('filter-text');
 var textContent = 0;
