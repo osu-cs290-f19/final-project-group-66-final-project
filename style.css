@@ -118,8 +118,6 @@ section{
   display: flex;
 }
 
-
-
 #add_people_button {
     position: fixed;
     right: 30px;
@@ -280,6 +278,29 @@ h3{
   background-color: orange;
 }
 
-.hidden {
-  display: none;
+.no-gutters{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body > footer{
+  background: #252525 URL(footer.jpg)repeat-x scroll left bottom;
+  min-height: 300px;
+  border-top: 3px solid #d73f09;
+  color: #ffffff;
+}
+
+.row-no-gutters{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-12{
+  flex: 0 0 100%;
+  max-width: 100%
+}
+
+#block-information{
+  margin-left: 20px;
+  margin-top: 30px;
 }
