@@ -109,8 +109,10 @@ function showSellSomethingModal() {
 	var showSomethingModal = document.getElementById('add-something-button');
 	var modalBackdrop = document.getElementById('modal-backdrop');
 
-	showSomethingModal.classList.remove('hidden');
-	modalBackdrop.classList.remove('hidden');
+	showSomethingModal.style.display = 'block';
+	//showSomethingModal.classList.remove('hidden');
+	//modalBackdrop.classList.remove('hidden');
+	modalBackdrop.style.display = 'block';
 
 }
 
@@ -202,45 +204,44 @@ function parsePostElem(postElem) {
 
 //~~~~~
 //Wait until the DOM content is loaded
-window.addEventListener('DOMContentLoaded', function () {
-		var postElems = document.getElementsByClassName('card');
-		for (var i = 0; i < postElems.length; i++) {
-			allPosts.push(parsePostElem(postElems[i]));
-		}
+var postElems = document.getElementsByClassName('card');
+for (var i = 0; i < postElems.length; i++) {
+	allPosts.push(parsePostElem(postElems[i]));
+}
 
-		/*
-		 * Grab all of the sexuality names already in the filter dropdown.
-		 
-		var filterCitySelect = document.getElementById('filter-sexuality');
-		if (filterCitySelect) {
-			var filterCityOptions = filterCitySelect.querySelectorAll('option:not([selected])');
-			for (var i = 0; i < filterCityOptions.length; i++) {
-			allCities.push(filterCityOptions[i].value.trim().toLowerCase());
-			}
-		}*/
+/*
+ * Grab all of the sexuality names already in the filter dropdown.
+
+ var filterCitySelect = document.getElementById('filter-sexuality');
+ if (filterCitySelect) {
+ var filterCityOptions = filterCitySelect.querySelectorAll('option:not([selected])');
+ for (var i = 0; i < filterCityOptions.length; i++) {
+ allCities.push(filterCityOptions[i].value.trim().toLowerCase());
+ }
+ }*/
 
 
-		var sellSomethingButton = document.getElementById('add_people_button');
-		if (sellSomethingButton) {
-			sellSomethingButton.addEventListener('click', showSellSomethingModal);
-		}
+var sellSomethingButton = document.getElementById('add_people_button');
 
-		var modalAcceptButton = document.getElementById('modal-accept');
-		if (modalAcceptButton) {
-			modalAcceptButton.addEventListener('click', handleModalAcceptClick);
-		}
+if (sellSomethingButton) {
+	sellSomethingButton.addEventListener('click', showSellSomethingModal);
+}
 
-		var modalHideButtons = document.getElementsByClassName('modal-hide-button');
-		for (var i = 0; i < modalHideButtons.length; i++) {
-			modalHideButtons[i].addEventListener('click', hideSellSomethingModal);
-		}
+var modalAcceptButton = document.getElementById('modal-accept');
+if (modalAcceptButton) {
+	modalAcceptButton.addEventListener('click', handleModalAcceptClick);
+}
 
-		var filterUpdateButton = document.getElementById('filter-update-button');
-		if (filterUpdateButton) {
-			filterUpdateButton.addEventListener('click', doFilterUpdate)
-		}
+var modalHideButtons = document.getElementsByClassName('modal-hide-button');
+for (var i = 0; i < modalHideButtons.length; i++) {
+	modalHideButtons[i].addEventListener('click', hideSellSomethingModal);
+}
 
-});
+var filterUpdateButton = document.getElementById('filter-update-button');
+if (filterUpdateButton) {
+	filterUpdateButton.addEventListener('click', doFilterUpdate)
+}
+
 
 
 
