@@ -58,10 +58,18 @@ updateButton.addEventListener('click',  function (event){
     event.stopPropagation();
 })
 
-//-----------------Add new item!
+//-----------------Add new item Section!
+//
+//
+//
+//
+//
 //
 //
 //Open the page when the user click the plus samble
+//
+//
+//
 var sellbutton = document.getElementById('add_people_button');
 var backdrop = document.getElementById('modal-backdrop');
 var sellmodal = document.getElementById('add-something-modal');
@@ -72,6 +80,9 @@ sellbutton.addEventListener('click',  function sell(Event){
 });
 
 //For close the second page or cancel items
+//
+//
+//
 var modalclose = document.getElementById('modal-close');
 var modalcancel = document.getElementById('modal-cancel');
 
@@ -85,8 +96,29 @@ modalcancel.addEventListener('click',  function sell(Event){
 })
 
 
-//Get the information of user wanna input]
+//Clear function for clear the input page
+function clear(){
+	potext.value = '';
+	posex.value = '';
+	pophoto.value = '';
+	poblog.value = '';
+//	pophone.value = '';
+
+	sellmodal.style.display = 'none';
+	backdrop.style.display = 'none' ;
+}
+
+
+
+
+
+
+
+
+//Get the information of user input
 //
+
+
 var potext = document.getElementById('post-name-input');
 var posex = document.getElementById('post-gender');
 var pophoto = document.getElementById('post-photo-input');
@@ -94,18 +126,12 @@ var poblog = document.getElementById('post-blog-input');
 //var pophone = document.getElementById('post-phone-input');
 
 var potextwords = 0;
-var posexwords = 0;
 var pophotowords = 0;
 var poblogwords = 0;
-var pophonewords = 0;
+//var pophonewords = 0;
 
 potext.addEventListener('change',function listener(event){
 	potextwords = event.currentTarget.value;
-	event.stopPropagation();
-});
-
-posex.addEventListener('change',function listener(event){
-	posexwords = event.currentTarget.value;
 	event.stopPropagation();
 });
 
@@ -131,7 +157,7 @@ var main = document.getElementById('people-cards');
 var accept = document.getElementById('modal-accept');
 
 accept.addEventListener('click',function sell(event){
-	if(potextwords == 0 || posexwords ==0 || pophotowords == 0 || poblogwords == 0){
+	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0){
 		alert("Ha? Can you input all of it?");
 	}else{
     var newpo = document.createElement('div');      //card
@@ -139,7 +165,7 @@ accept.addEventListener('click',function sell(event){
     var imagcontainer = document.createElement('div');
     var infocontainer = document.createElement('div');
 
-    var img = document.createElement('div');   //photo
+    var img = document.createElement('img');   //photo
 
 		var span1 = document.createElement('span');
 		var span2 = document.createElement('span');
@@ -159,22 +185,23 @@ accept.addEventListener('click',function sell(event){
 		span4.classList.add('card-phone-number');
 
 		img.src = pophotowords;
-		img.alt = potextwords;
-
-		blog.textContent = poblogwords;
-		span1.textContent = potextwords;
-		span2.textContent = posexwords;
+		posexwords = posex.value;
+		blog.textContent = "Hao's blog";
+		blog.href = poblogwords;
+		span1.textContent = "Name: " + potextwords;
+		span2.textContent = "Gender: " + posexwords;
     span3.textContent = poblogwords;
-		span4.textContent = pophonewords;
+		//span4.textContent = pophonewords;
 
 		imagcontainer.appendChild(img);
 
 		infocontainer.appendChild(span1);
 		infocontainer.appendChild(span2);
   	infocontainer.appendChild(span3);
-		infocontainer.appendChild(span4);
+		//infocontainer.appendChild(span4);
   	infocontainer.appendChild(blog);
 
+	//	newpo.appendChild(imagcontainer);
 		newpo.appendChild(imagcontainer);
 		newpo.appendChild(infocontainer);
 
@@ -183,16 +210,3 @@ accept.addEventListener('click',function sell(event){
 		sellmodal.style.display = 'none';
 	}
 });
-
-
-//Clear function for clear the input page
-function clear(){
-	potext.value = '';
-	posex.value = '';
-	pophoto.value = '';
-	poblog.value = '';
-//	pophone.value = '';
-
-	sellmodal.style.display = 'none';
-	backdrop.style.display = 'none' ;
-}
