@@ -1,0 +1,15 @@
+{{> header}}
+
+<main class="content">
+  {{#if showFilter}}
+    {{> filter}}
+  {{/if}}
+  <section id="people-cards">
+    {{#each lol}}
+      {{> post}}
+    {{/each}}
+  </section>
+</main>
+{{#if showModal}}
+  {{> modal}}
+{{/if}}
