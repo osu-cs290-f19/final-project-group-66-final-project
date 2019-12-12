@@ -1,11 +1,11 @@
 [
     {
-    "tel": 8572189366,
+    "tel": 5419087018,
     "email": "jiaha@oregonstate.edu",
     "gender": "Male",
     "photoURL": "/Hao.jpg",
     "description": "Hao",
-    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html"  
+    "blog": "http://web.engr.oregonstate.edu/~jiaha/Blog-5.html"
     },
     {
     "tel": 8572189366,
@@ -13,7 +13,7 @@
     "gender": "Male",
     "photoURL": "/Zhou.jpg",
     "description": "Zhangyao Zhou",
-    "blog": "http://web.engr.oregonstate.edu/~zhouzha/blog.html" 
+    "blog": "http://web.engr.oregonstate.edu/~zhouzha/blog.html"
     },
     {
     "tel": 5413688661,
@@ -21,7 +21,7 @@
     "gender": "Male",
     "photoURL": "Lin.JPG",
     "description": "Xinwei Lin",
-    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html" 
+    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html"
     },
     {
     "tel": 5413609197,
@@ -29,6 +29,6 @@
     "gender": "Male",
     "photoURL": "elyon.jpg",
     "description": "Honghao Li",
-    "blog": "/public/elyon.html" 
+    "blog": "http://web.engr.oregonstate.edu/~lihongh/cs290/index.html"
     }
 ]
