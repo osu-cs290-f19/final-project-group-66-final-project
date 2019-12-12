@@ -15,6 +15,8 @@ templates['post'] = template({"compiler":[8,">= 4.3.0"],"main":function(containe
     + alias4(((helper = (helper = helpers.email || (depth0 != null ? depth0.email : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"email","hash":{},"data":data,"loc":{"start":{"line":8,"column":44},"end":{"line":8,"column":53}}}) : helper)))
     + "</span>\r\n        <span class=\"card-phone-number\">TEL: <br>"
     + alias4(((helper = (helper = helpers.tel || (depth0 != null ? depth0.tel : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tel","hash":{},"data":data,"loc":{"start":{"line":9,"column":49},"end":{"line":9,"column":56}}}) : helper)))
-    + "</span>\r\n        <a href=\"#\" class=\"card-blog\">Hao's blog</a>\r\n    </div>\r\n</div>";
+    + "</span>\r\n        <a href=\""
+    + alias4(((helper = (helper = helpers.blog || (depth0 != null ? depth0.blog : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"blog","hash":{},"data":data,"loc":{"start":{"line":10,"column":17},"end":{"line":10,"column":25}}}) : helper)))
+    + "\" class=\"card-blog\">Go to my blog</a>\r\n    </div>\r\n</div>";
 },"useData":true});
 })();

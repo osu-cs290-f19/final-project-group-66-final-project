@@ -2,8 +2,33 @@
     {
     "tel": 8572189366,
     "email": "jiaha@oregonstate.edu",
-    "gender": "woman",
+    "gender": "Female",
     "photoURL": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg",
-    "description": "Hao"  
+    "description": "Hao",
+    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html"  
+    },
+    {
+    "tel": 5413688661,
+    "email": "linxinw@oregonstate.edu",
+    "gender": "Female",
+    "photoURL": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg",
+    "description": "Xinwei Lin",
+    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html" 
+    },
+    {
+    "tel": 5413688661,
+    "email": "linxinw@oregonstate.edu",
+    "gender": "Female",
+    "photoURL": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg",
+    "description": "Xinwei Lin",
+    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html" 
+    },
+    {
+    "tel": 5413688661,
+    "email": "linxinw@oregonstate.edu",
+    "gender": "Female",
+    "photoURL": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg",
+    "description": "Xinwei Lin",
+    "blog": "http://web.engr.oregonstate.edu/~linxinw/blog.html" 
     }
 ]

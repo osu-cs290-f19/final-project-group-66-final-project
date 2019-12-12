@@ -168,52 +168,12 @@ accept.addEventListener('click',function sell(event){
 	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0){
 		alert("Ha? Can you input all of it?");
 	}else{
-    var newpo = document.createElement('div');      //card
-
-    var imagcontainer = document.createElement('div');
-    var infocontainer = document.createElement('div');
-
-    var img = document.createElement('img');   //photo
-
-		var span1 = document.createElement('span');
-		var span2 = document.createElement('span');
-		var span3 = document.createElement('span');
-		var span4 = document.createElement('span');
-
-  	var blog = document.createElement('a');
-
-		newpo.classList.add('card');
-
-		imagcontainer.classList.add('card-image-container');
-		infocontainer.classList.add('card-info-container');
-		blog.classList.add('card-blog');
-		span1.classList.add('card-name');
-		span2.classList.add('card-sexuality');
-    span3.classList.add('card-email');
-		span4.classList.add('card-phone-number');
-
-		img.src = pophotowords;
-		posexwords = posex.value;
-		blog.textContent = "Hao's blog";
-		blog.href = poblogwords;
-		span1.textContent = "Name: " + potextwords;
-		span2.textContent = "Gender: " + posexwords;
-    span3.textContent = poblogwords;
-		//span4.textContent = pophonewords;
-
-		imagcontainer.appendChild(img);
-
-		infocontainer.appendChild(span1);
-		infocontainer.appendChild(span2);
-  	infocontainer.appendChild(span3);
-		//infocontainer.appendChild(span4);
-  	infocontainer.appendChild(blog);
-
-	//	newpo.appendChild(imagcontainer);
-		newpo.appendChild(imagcontainer);
-		newpo.appendChild(infocontainer);
-
-		main.appendChild(newpo);
+		var postDataHTML = Handlebars.templates.post({
+			description: potextwords,
+			photoURL: pophotowords,
+			blog: poblogwords
+		});
+		main.insertAdjacentHTML('beforeend', postDataHTML);
 		clear();
 		sellmodal.style.display = 'none';
 	}
