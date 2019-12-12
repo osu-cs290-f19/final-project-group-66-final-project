@@ -51,14 +51,17 @@ header img{
 
 
 .filter-input-label {
-    display: inline-block;
+  display: inline-block;
 }
 
 
 .filter-input-element {
-    display: inline-block;
+  display: inline-block;
 }
 
+.filter-input:hover{
+  cursor: pointer;
+}
 /*
 section{
   text-align:center;
@@ -96,12 +99,11 @@ section{
 
 .card {
   display: inline-block;
-  height: 300px;
+  height: 280px;
   width: 410px;
-  margin: 10px;
+  margin: 50px;
+  margin-top: 30px;
   padding: 10px;
-  border: 1px solid black;
-  border-radius: 3px;
   background-color: rgb(9, 245, 245);
 }
 
@@ -126,8 +128,7 @@ section{
 
 .card-info-container{
   display: inline-block;
-  margin-left: 30px;
-  margin-top: 20px;
+  margin-left: 10px;
   position: absolute;
 }
 
@@ -137,8 +138,8 @@ section{
 
 #add_people_button {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 10px;
+    bottom: 15px;
     height: 60px;
     width: 60px;
     border: none;
@@ -296,6 +297,10 @@ h3{
   border-radius: 5px;
   font-weight: lighter;
   cursor: pointer;
+}
+
+.action-button:hover{
+  font-size: 28px;
 }
 
 #modal-accept:hover{
