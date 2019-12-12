@@ -9,6 +9,17 @@ filterImage.addEventListener('click', function (event) {
 	}
 });
 
+var postEmailInput = document.getElementById('post-email-input');
+var postEmailInputContent = 0;
+postEmailInput.addEventListener('change', function(event){
+	postEmailInputContent = postEmailInput.textContent;
+});
+
+var postTelephoneInput = document.getElementById('post-telephone-input');
+var postTelephoneInputContent = 0;
+postTelephoneInput.addEventListener('change', function(event){
+	postTelephoneInputContent = postTelephoneInput.textContent;
+});
 
 var text = document.getElementById('filter-text');
 var textContent = 0;
@@ -90,7 +101,7 @@ modalclose.addEventListener('click',  function sell(Event){
 	clear();
 })
 modalcancel.addEventListener('click',  function sell(Event){
-//	clear();
+	clear();
 	sellmodal.style.display = 'none';
 	backdrop.style.display = 'none';
 })
@@ -102,16 +113,13 @@ function clear(){
 	posex.value = '';
 	pophoto.value = '';
 	poblog.value = '';
+	postEmailInput.value = '';
+	postTelephoneInput.value = '';
 //	pophone.value = '';
 
 	sellmodal.style.display = 'none';
 	backdrop.style.display = 'none' ;
 }
-
-
-
-
-
 
 
 
