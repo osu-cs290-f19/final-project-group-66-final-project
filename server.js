@@ -49,7 +49,7 @@ app.post('/addPhoto', function (req, res, next) {
         }
       );
     } else {
-      res.status(400).send("Request body needs url and caption.");
+      res.status(400).send("Request body needs enough information.");
     }
   } else {
     next();
