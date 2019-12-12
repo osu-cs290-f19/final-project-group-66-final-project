@@ -184,6 +184,7 @@ section{
 
 .modal-body{
   padding: 20px;
+  margin-top: -20px;
 }
 
 .modal-footer{
@@ -200,7 +201,7 @@ h3{
   margin-inline-end: 0px;
   font-weight: bold;
   font-size: 25px;
-  text-decoration: underline;
+  margin-left: 20px;
 }
 
 #modal-close{
@@ -210,6 +211,9 @@ h3{
   border: none;
   cursor: pointer;
   background-color: inherit;
+  margin-left: -30px;
+  margin-top: -10px;
+  color: red;
 }
 
 #modal-close:hover {
@@ -244,6 +248,11 @@ h3{
   font-weight: 600;
   flex: 1 75px;
   margin-right: 1px;
+}
+
+.post-input-option{
+  font-weight: 600;
+  font-size: 17px;
 }
 
 .post-input-element input{
