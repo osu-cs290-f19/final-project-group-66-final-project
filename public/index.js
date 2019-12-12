@@ -152,12 +152,13 @@ var poblogwords = 0;
 var pophonewords = 0;
 var mailwords = 0;
 var posexwords = 0;
-
+/*
 posex.addEventListener('click',function listener(event){
 	posexwords = event.currentTarget.value;
+	console.log(posexwords);
 	event.stopPropagation();
 });
-
+*/
 potext.addEventListener('change',function listener(event){
 	potextwords = event.currentTarget.value;
 	event.stopPropagation();
@@ -189,10 +190,10 @@ var main = document.getElementById('people-cards');
 var accept = document.getElementById('modal-accept');
 
 accept.addEventListener('click',function sell(event){
-	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0 || posexwords == 0 || mailwords == 0 || pophonewords == 0){
+	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0 || mailwords == 0 || pophonewords == 0){
 		alert("Ha? Can you input all of it?");
 	}else{
-		//
+		posexwords = posex.value;
 		var postRequest = new XMLHttpRequest();
 		var requestURL = '/addPhoto';
 		postRequest.open('POST', requestURL);
