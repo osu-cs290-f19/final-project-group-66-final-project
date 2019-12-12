@@ -1,3 +1,15 @@
+//gets the Person ID from the current URL.
+function getPersonIdFromURL() {
+	var path = window.location.pathname;
+	var pathParts = path.split('/');
+	if (pathParts[1] === "people") {
+	  return pathParts[2];
+	} else {
+	  return null;
+	}
+}
+//
+
 var filterImage = document.getElementById('filter-img');
 var filter = document.getElementById('filter-body-container');
 filterImage.addEventListener('click', function (event) {
@@ -180,7 +192,11 @@ accept.addEventListener('click',function sell(event){
 	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0 || posexwords == 0 || mailwords == 0 || pophonewords == 0){
 		alert("Ha? Can you input all of it?");
 	}else{
-		var postDataHTML = Handlebars.templates.post({
+		//
+		var postRequest = new XMLHttpRequest();
+		var requestURL = '/addPhoto';
+		postRequest.open('POST', requestURL);
+		var requestBody = JSON.stringify({
 			description: potextwords,
 			photoURL: pophotowords,
 			blog: poblogwords,
@@ -188,7 +204,27 @@ accept.addEventListener('click',function sell(event){
 			email: mailwords,
 			tel: pophonewords
 		});
-		main.insertAdjacentHTML('beforeend', postDataHTML);
+		console.log("== requestBody:", requestBody);
+		postRequest.setRequestHeader('Content-Type', 'application/json');
+
+		postRequest.addEventListener('load', function (event) {
+			if (event.target.status !== 200) {
+				var responseBody = event.target.response;
+				alert("Error saving photo on server side: " + responseBody);
+			} 
+			else {
+				var postDataHTML = Handlebars.templates.post({
+					description: potextwords,
+					photoURL: pophotowords,
+					blog: poblogwords,
+					gender: posexwords,
+					email: mailwords,
+					tel: pophonewords
+				});			
+				main.insertAdjacentHTML('beforeend', postDataHTML);
+			}
+		});
+		postRequest.send(requestBody);
 		clear();
 		sellmodal.style.display = 'none';
 	}
