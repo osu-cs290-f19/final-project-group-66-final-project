@@ -1,0 +1,77 @@
+/*
+ * You should write your CSS in this file.  Don't forget to add your name and
+ * @oregonstate.edu email address below.
+ *
+ * name:Honghao Li
+ * email:lihongh@oregonstate.edu
+ */
+
+.site-title{
+	margin:0;
+	text-align: center;
+  margin-left:150px;
+	position:static;
+	font-size:80px;
+	padding-top:25px;
+	font-family:serif;
+
+  padding-left:30px;
+}
+.site-title a{
+    color:black;
+    font-weight: 300;
+		text-align: center;
+    text-decoration:none;
+}
+
+.filter-container{
+    margin:0;
+		text-align: center;
+    margin-top:12px;
+		width:270px;
+		height: 600px;
+		padding-left:55%;
+    padding-right:20px;
+    padding-top:10px;
+    position:static;
+    font-weight:700;
+    display:inline-block;
+}
+div.filter-input-container {
+    margin-bottom:320px;
+}
+
+div.feel-container {
+	text-align: center;
+	padding-top:0px;
+	font-weight:700;
+}
+
+label {
+		text-align: center;
+    font-weight:700;
+}
+
+fieldset {
+    width:130px;
+    height:120px;
+    border-color:rgb(245,245,245);
+}
+
+#results {
+    display:flex;
+    flex-wrap:wrap;
+    margin-left:80px;
+    margin-top:-830px;
+}
+.result {
+
+			height:0px;
+			text-align: center;
+			margin-left:-250px;
+}
+.image-container img{
+	max-height: 540px;
+	max-width: 400px;
+
+}
