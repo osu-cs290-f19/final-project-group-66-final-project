@@ -178,3 +178,37 @@ accept.addEventListener('click',function sell(event){
 		sellmodal.style.display = 'none';
 	}
 });
+
+
+var red = document.getElementById('background-red');
+var white = document.getElementById('background-white');
+var pink = document.getElementById('background-pink');
+var green = document.getElementById('background-green');
+var blue = document.getElementById('background-blue');
+
+var filterContainer = document.getElementsByClassName('filter-container')[0];
+var section = document.getElementById('people-cards');
+red.addEventListener('click',function (event){
+	filterContainer.style.backgroundColor = "red";
+	section.style.backgroundColor = "red";
+});
+
+white.addEventListener('click',function (event){
+	filterContainer.style.backgroundColor = "white";
+	section.style.backgroundColor = "white";
+});
+
+pink.addEventListener('click',function (event){
+	filterContainer.style.backgroundColor = "pink";
+	section.style.backgroundColor = "pink";
+});
+
+green.addEventListener('click',function (event){
+	filterContainer.style.backgroundColor = "green";
+	section.style.backgroundColor = "green";
+});
+
+blue.addEventListener('click',function (event){
+	filterContainer.style.backgroundColor = "rgb(6, 215, 243)";
+	section.style.backgroundColor = "rgb(6, 215, 243)";
+});

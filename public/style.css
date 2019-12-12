@@ -17,7 +17,6 @@ section{
 
 header img{
   max-width: 50%;
-
 }
 
 
@@ -29,12 +28,15 @@ header img{
 
 .filter-body-container{
   display:none;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 .filter-container img{
   max-width: 3%;
   border: 1px solid black;
   border-radius: 3px;
+  margin-top:10px;
 }
 
 .filter-container img:hover {
@@ -191,6 +193,11 @@ section{
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 20px 10px;
+  margin-top: -20px;
+}
+
+.modal-header{
+  margin-top: -20px;
 }
 
 h3{
@@ -211,7 +218,7 @@ h3{
   border: none;
   cursor: pointer;
   background-color: inherit;
-  margin-left: -30px;
+  margin-left: -35px;
   margin-top: -10px;
   color: red;
 }
@@ -338,4 +345,59 @@ body > footer{
 
 .hidden{
   display:none;
+}
+
+.background-option{
+  border: 1px solid rgb(53, 52, 52);
+  border-radius: 5px;
+  display: inline-block;
+  position: fixed;
+  right: 10px;
+  top: 300px;
+  font-size: 36px;
+  background-color: inherit;
+}
+
+.background-option:hover{
+  font-size: 50px;
+}
+
+.background-red{
+  color:red;
+  cursor: pointer;
+  margin:0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.background-white{
+  color:white;
+  cursor: pointer;
+  margin:0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.background-pink{
+  color:pink;
+  cursor: pointer;
+  margin:0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.background-green{
+  color:green;
+  cursor: pointer;
+  margin:0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.background-blue{
+  color:rgb(6, 215, 243);
+  cursor: pointer;
+  margin:0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
