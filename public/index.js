@@ -131,12 +131,20 @@ var potext = document.getElementById('post-name-input');
 var posex = document.getElementById('post-gender');
 var pophoto = document.getElementById('post-photo-input');
 var poblog = document.getElementById('post-blog-input');
-//var pophone = document.getElementById('post-phone-input');
+var pophone = document.getElementById('post-telephone-input');
+var mail = document.getElementById('post-email-input');
 
 var potextwords = 0;
 var pophotowords = 0;
 var poblogwords = 0;
-//var pophonewords = 0;
+var pophonewords = 0;
+var mailwords = 0;
+var posexwords = 0;
+
+posex.addEventListener('click',function listener(event){
+	posexwords = event.currentTarget.value;
+	event.stopPropagation();
+});
 
 potext.addEventListener('change',function listener(event){
 	potextwords = event.currentTarget.value;
@@ -154,24 +162,31 @@ poblog.addEventListener('change',function listener(event){
 	event.stopPropagation();
 });
 
-/*pophone.addEventListener('change',function listener(event){
+pophone.addEventListener('change',function listener(event){
 	pophonewords = event.currentTarget.value;
 	event.stopPropagation();
-});*/
+});
 
+mail.addEventListener('change',function listener(event){
+	mailwords = event.currentTarget.value;
+	event.stopPropagation();
+});
 
 //Create a new item process
 var main = document.getElementById('people-cards');
 var accept = document.getElementById('modal-accept');
 
 accept.addEventListener('click',function sell(event){
-	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0){
+	if(potextwords == 0 || pophotowords == 0 || poblogwords == 0 || posexwords == 0 || mailwords == 0 || pophonewords == 0){
 		alert("Ha? Can you input all of it?");
 	}else{
 		var postDataHTML = Handlebars.templates.post({
 			description: potextwords,
 			photoURL: pophotowords,
-			blog: poblogwords
+			blog: poblogwords,
+			gender: posexwords,
+			email: mailwords,
+			tel: pophonewords
 		});
 		main.insertAdjacentHTML('beforeend', postDataHTML);
 		clear();
